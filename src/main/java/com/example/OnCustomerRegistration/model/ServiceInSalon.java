@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 
 @Data
 @Builder
-public class Service {
+public class ServiceInSalon {
     private long id;
     @NotBlank(message = "Название услуги обязательно к заполнению")
     private String name;
-    @Positive
-    private int durationMinutes;
-    @Positive
+    @Positive(message = "Продолжительность процедуры должна быть положительной")
+    private Long durationMinutes;
+    @Positive(message = "Цена процедуры должна быть положительной")
     private BigDecimal price;
 }
