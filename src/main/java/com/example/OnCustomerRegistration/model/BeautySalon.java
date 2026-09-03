@@ -4,8 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -15,6 +14,6 @@ public class BeautySalon {
     private String name;
     @NotBlank(message = "Адрес салона обязателен к заполнению")
     private String address;
-    private List<Long> serviceIds = new ArrayList<>();
-    private List<Long> masterIds = new ArrayList<>();
+    private Set<Long> serviceIds;
+    private Set<Long> masterIds;
 }
